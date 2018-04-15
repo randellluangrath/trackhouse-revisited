@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
     selector: 'view',
     templateUrl: './view.component.html'
 })
-export class FetchDataComponent {
+export class ViewComponent {
     public forecasts: WeatherForecast[];
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
