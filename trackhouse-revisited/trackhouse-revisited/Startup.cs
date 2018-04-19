@@ -52,7 +52,7 @@ namespace trackhouse_revisited
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{id?}");
 
                 routes.MapSpaFallbackRoute(
                     name: "spa-fallback",
