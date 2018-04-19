@@ -3,7 +3,8 @@ import { Http } from '@angular/http';
 
 @Component({
     selector: 'view',
-    templateUrl: './view.component.html'
+    templateUrl: './view.component.html',
+    styleUrls: ['./view.component.css']
 })
 export class ViewComponent {
     public forecasts: WeatherForecast[];
