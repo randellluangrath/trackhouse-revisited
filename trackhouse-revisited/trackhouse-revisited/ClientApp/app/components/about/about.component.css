@@ -1,0 +1,10 @@
+﻿p code {
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    display: inline-block;
+}
+
+p {
+    font-size: 20px;
+}
