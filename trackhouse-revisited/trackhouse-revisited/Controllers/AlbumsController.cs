@@ -21,5 +21,11 @@ namespace trackhouse_revisited.Controllers
         {
             return _context.Albums.ToListAsync().GetAwaiter().GetResult();
         }
+
+        [HttpGet("{name}")]
+        public Album GetAlbum(string name)
+        {
+            return _context.Albums.SingleOrDefaultAsync(x => x.Name == name).GetAwaiter().GetResult();
+        }
     }
 }
