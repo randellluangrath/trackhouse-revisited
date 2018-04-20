@@ -9,6 +9,7 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { ViewComponent } from './components/view/view.component';
 import { AboutComponent } from './components/about/about.component';
+import { FilterPipe } from './components/filter/filter.pipe';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { AboutComponent } from './components/about/about.component';
         NavMenuComponent,
         AboutComponent,
         ViewComponent,
-        HomeComponent
+        HomeComponent,
+        FilterPipe
     ],
     imports: [
         CommonModule,
@@ -29,7 +31,8 @@ import { AboutComponent } from './components/about/about.component';
             { path: 'view', component: ViewComponent },
             { path: '**', redirectTo: 'home' }
         ])
-    ]
+    ],
+    providers: [ FilterPipe ]
 })
 export class AppModuleShared {
 }

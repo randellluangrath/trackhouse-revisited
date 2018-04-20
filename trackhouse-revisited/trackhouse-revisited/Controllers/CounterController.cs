@@ -19,19 +19,17 @@ namespace trackhouse_revisited.Controllers
         }
 
         [HttpGet()]
-        public List<string> GetAllSongs(){
+        public string GetAllSongs(){
 
             var songs = _context.Songs.ToList();
             string lyrics = "";
 
-            Counter result = new Counter();
-
             foreach (var song in songs)
             {
-                lyrics = song + " " + lyrics;
+                lyrics = song.Lyrics + " " + lyrics;
             }
 
-            return null;
+            return lyrics;
         }
 
     }
