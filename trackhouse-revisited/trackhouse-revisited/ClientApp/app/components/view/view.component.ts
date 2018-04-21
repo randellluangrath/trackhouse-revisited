@@ -15,6 +15,7 @@ export class ViewComponent {
     result: string;
     words: any[];
     wordcounts: WordCount[] = [];
+    resultArray: WordCount[] = [];
     wordcount: WordCount;
 
     constructor(private http: Http, private filter: FilterPipe) {
@@ -23,41 +24,49 @@ export class ViewComponent {
 
     RetrieveData(char: string) {
 
-        this.wordcounts = [];
-
         //this.http.get("http://localhost:59473/api/counter").subscribe(x => { this.result = x.toString() });
 
-        this.result = "kanye kanye kanye matt dick boys like hair ass nose teeth titties";
+        this.result = "kanye kanye kanye jesus god gospel prayer love peace";
 
         this.words = this.result.split(" ");
 
-        if (char == "*") {
-        
-            for (let word of this.words) {
+        if (char !== "*") {
 
-                var re = new RegExp(word, 'g');
+            this.words = this.filter.transform(this.words, char);
 
-                var match = this.result.match(re)!;
-
-                var count = match.length;
-
-                this.wordcount = {
-                    word: word,
-                    count: count
-                };
-
-                this.wordcounts.push(this.wordcount);          
-            }           
         }
-        else {
-            
-            //this.result = this.filter.transform(this.result, char);
-        }        
 
-        this.wordcounts = this.wordcounts.filter(function (item, pos, self) {
-            return self.indexOf(item) == pos;
+        this.words = this.filter.transform(this.words, char);
+
+        for (let word of this.words) {
+
+            var re = new RegExp(word, 'g');
+
+            var match = this.result.match(re)!;
+
+            var count = match.length;
+
+            this.wordcount = {
+                word: word,
+                count: count
+            };
+
+            this.wordcounts.push(this.wordcount);
+
+        }
+
+        // remove duplicate values from array of objects
+
+        let filterSet = new Set();
+
+        this.wordcounts.forEach(x => {
+            let oldSize = filterSet.size;
+            filterSet.add(x.word);
+
+            if (oldSize !== filterSet.size) {
+                this.resultArray.push(x);
+            }
         })
-
     }
 }
 

@@ -105,11 +105,10 @@
                     <th>Frequency</th>
                 </tr>
             </thead>
-            <tr *ngFor="let word of wordcounts | filter : searchText">
-                <td>{{word.word}}</td>
-                <td>{{word.count}}</td>
+            <tr *ngFor="let item of resultArray | filter : searchText">
+                <td>{{item.word}}</td>
+                <td>{{item.count}}</td>
             </tr>
-
         </table>
     </div>
 </div>
