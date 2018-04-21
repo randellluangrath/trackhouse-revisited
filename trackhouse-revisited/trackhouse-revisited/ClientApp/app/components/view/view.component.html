@@ -1,11 +1,12 @@
 <div class="col-sm-12">
 
-    <p *ngIf="!forecasts"><em>Loading...</em></p>
+    <p *ngIf="!filteredResult"><em>Loading...</em></p>
+
     <div class="col-sm-12">
         <h1>Select a letter...</h1>
         <div class="input-group centered">
             <div class="input-group-btn">
-                <button type="button" class="btn btn-default" aria-label="ALL" (click)="RetrieveData('*')">
+                <button type="button" class="btn btn-default" aria-label="ALL" (click)="RetrieveData('')">
                     *
                 </button>
                 <button type="button" class="btn btn-default" aria-label="A" (click)="RetrieveData('a')">
@@ -105,11 +106,10 @@
                     <th>Frequency</th>
                 </tr>
             </thead>
-            <tr *ngFor="let word of wordcounts | filter : searchText">
-                <td>{{word.word}}</td>
-                <td>{{word.count}}</td>
+            <tr *ngFor="let item of filteredResult | filter : searchText">
+                <td>{{item.word}}</td>
+                <td>{{item.count}}</td>
             </tr>
-
         </table>
     </div>
 </div>

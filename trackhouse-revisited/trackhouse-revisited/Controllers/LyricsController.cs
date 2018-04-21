@@ -9,11 +9,11 @@ using trackhouse_revisited.Models;
 namespace trackhouse_revisited.Controllers
 {
     [Route("api/[controller]")]
-    public class CounterController : Controller
+    public class LyricsController : Controller
     {
         private readonly MusicContext _context;
 
-        public CounterController(MusicContext context)
+        public LyricsController(MusicContext context)
         {
             _context = context;
         }
