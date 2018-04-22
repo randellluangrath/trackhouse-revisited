@@ -95,7 +95,7 @@
                 
             </div>
 
-            <input class="form-control" [(ngModel)]="searchText" placeholder="Search...">
+            <input type="text" class="form-control" [(ngModel)]="letter" placeholder="Search...">
 
         </div>
 
@@ -107,7 +107,7 @@
                     <th>Frequency</th>
                 </tr>
             </thead>
-            <tr *ngFor="let item of filteredResult">
+            <tr *ngFor="let item of filteredResult | filter:letter">
                 <td>{{item.word}}</td>
                 <td>{{item.count}}</td>
             </tr>
