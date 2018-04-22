@@ -59,12 +59,6 @@ export class ViewComponent {
        
     }
 
-    RetrieveData(letter: string) {
-
-        this.filter.transform(this.filteredResult, letter);
-
-    }
-
 }
 
 interface TableData {
