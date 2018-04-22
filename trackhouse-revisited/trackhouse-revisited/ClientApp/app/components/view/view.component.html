@@ -89,9 +89,10 @@
                 </button>
 
                 <!-- search functionality-->
-                <button type="button" class="btn btn-default">
-                    Search
+                <button class="btn btn-default">
+                    <span class='glyphicon glyphicon-triangle-right'></span>
                 </button>
+                
             </div>
 
             <input class="form-control" [(ngModel)]="searchText" placeholder="Search...">
@@ -106,7 +107,7 @@
                     <th>Frequency</th>
                 </tr>
             </thead>
-            <tr *ngFor="let item of filteredResult | filter : searchText">
+            <tr *ngFor="let item of filteredResult">
                 <td>{{item.word}}</td>
                 <td>{{item.count}}</td>
             </tr>
