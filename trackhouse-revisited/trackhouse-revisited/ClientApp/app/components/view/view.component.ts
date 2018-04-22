@@ -18,9 +18,8 @@ export class ViewComponent {
     wordcounts: WordCount[] = [];
     filteredResult: WordCount[] = [];
     wordcount: WordCount;
-    searchText: string;
 
-    constructor(private http: Http, private filter: FilterPipe) {
+    constructor(private http: Http, public filter: FilterPipe) {
 
         this.result = "kanye kanye kanye jesus god gospel prayer love peace elevator elevator";
 
@@ -32,14 +31,14 @@ export class ViewComponent {
 
             var match = this.result.match(re)!;
 
-           var count = match.length;
+            var count = match.length;
 
-           this.wordcount = {
-                    word: word,
-                    count: count
-           };
+            this.wordcount = {
+                word: word,
+                count: count
+            };
 
-           this.wordcounts.push(this.wordcount);
+            this.wordcounts.push(this.wordcount);
 
         }
 
@@ -60,71 +59,12 @@ export class ViewComponent {
        
     }
 
-    RetrieveData(char: string) {
+    RetrieveData(letter: string) {
 
-        this.filteredResult = []
+        this.filter.transform(this.filteredResult, letter);
 
-        //this.http.get("http://localhost:59473/api/counter").subscribe(x => { this.result = x.toString() });
-
-        this.result = "kanye kanye kanye jesus god gospel prayer love peace elevator elevator";
-
-        this.words = this.result.split(" ");      
-
-        for (let word of this.words) {
-
-            var re = new RegExp(word, 'g');
-
-            var match = this.result.match(re)!;
-
-            var count = match.length;
-
-            this.wordcount = {
-                word: word,
-                count: count
-            };
-
-            this.wordcounts.push(this.wordcount);
-
-        }
-
-        if (char == "") {
-
-            let filterSet = new Set();
-
-            this.wordcounts.forEach(x => {
-
-                let oldSize = filterSet.size;
-
-                filterSet.add(x.word);
-
-                if (oldSize !== filterSet.size) {
-
-                    this.filteredResult.push(x);
-                    
-                }
-            })
-
-        } else {
-            
-            let filterSet = new Set();
-
-            this.wordcounts.forEach(x => {
-
-                let oldSize = filterSet.size;
-
-                filterSet.add(x.word);
-
-                if (oldSize !== filterSet.size) {
-
-                    if (x.word.charAt(0).toLowerCase() == char.toLowerCase()) {
-
-                        this.filteredResult.push(x);
-
-                    }
-                }
-            })
-        }
     }
+
 }
 
 interface TableData {

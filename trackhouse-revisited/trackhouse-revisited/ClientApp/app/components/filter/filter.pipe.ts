@@ -1,16 +1,32 @@
 ﻿import { Pipe, PipeTransform } from '@angular/core';
+import { WordCount } from '../../tsmodels/wordcount';
 @Pipe({
     name: 'filter'
 })
+
 export class FilterPipe implements PipeTransform {
-    transform(items: any[], searchText: string): any[] {
+
+    filtered: WordCount[];
+
+    transform(items: WordCount[], letter: string): WordCount[] {
         if (!items) return [];
-        if (!searchText) return items;
+        if (!letter) return items;
 
-        searchText = searchText.toLowerCase();
+        this.filtered = [];
 
-        return items.filter(it => {
-            return it.toLowerCase().includes(searchText);
-        });
+        letter = letter.toLowerCase();
+
+        var letterMatch = new RegExp(letter, 'i');
+
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+
+            if (letterMatch.test(item.word)) {
+                this.filtered.push(item);
+            }
+        }
+
+        return this.filtered;      
+
     }
 }
