@@ -1,3 +1,5 @@
-# Trackhouse Revisited
+# Kanye REST Jay(Z) P-I. Host Malone
 
-Revisiting an old project by using Angular and C#. The web application displays the frequency of the words that Kanye West has used in his songs to date. 
+Ever wondered what the most used word by an artist is?
+
+
