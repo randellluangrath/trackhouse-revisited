@@ -6,95 +6,91 @@
         <h1>Select a letter...</h1>
         <div class="input-group centered">
             <div class="input-group-btn">
-                <button type="button" class="btn btn-default" aria-label="ALL" (click)="RetrieveData('')">
+                <button type="button" class="btn btn-default" aria-label="ALL" (click)="letter=''">
                     *
                 </button>
-                <button type="button" class="btn btn-default" aria-label="A" (click)="RetrieveData('a')">
+                <button type="button" class="btn btn-default" aria-label="A" (click)="letter='a'">
                     A
                 </button>
-                <button type="button" class="btn btn-default" aria-label="B" (click)="RetrieveData('b')">
+                <button type="button" class="btn btn-default" aria-label="B" (click)="letter='b'">
                     B
                 </button>
-                <button type="button" class="btn btn-default" aria-label="C" (click)="RetrieveData('c')">
+                <button type="button" class="btn btn-default" aria-label="C" (click)="letter='c'">
                     C
                 </button>
-                <button type="button" class="btn btn-default" aria-label="D" (click)="RetrieveData('d')">
+                <button type="button" class="btn btn-default" aria-label="D" (click)="letter='d'">
                     D
                 </button>
-                <button type="button" class="btn btn-default" aria-label="E" (click)="RetrieveData('e')">
+                <button type="button" class="btn btn-default" aria-label="E" (click)="letter='e'">
                     E
                 </button>
-                <button type="button" class="btn btn-default" aria-label="F" (click)="RetrieveData('f')">
+                <button type="button" class="btn btn-default" aria-label="F" (click)="letter='f'">
                     F
                 </button>
-                <button type="button" class="btn btn-default" aria-label="G" (click)="RetrieveData('g')">
+                <button type="button" class="btn btn-default" aria-label="G" (click)="letter='g'">
                     G
                 </button>
-                <button type="button" class="btn btn-default" aria-label="H" (click)="RetrieveData('h')">
+                <button type="button" class="btn btn-default" aria-label="H" (click)="letter='h'">
                     H
                 </button>
-                <button type="button" class="btn btn-default" aria-label="I" (click)="RetrieveData('i')">
+                <button type="button" class="btn btn-default" aria-label="I" (click)="letter='i'">
                     I
                 </button>
-                <button type="button" class="btn btn-default" aria-label="J" (click)="RetrieveData('j')">
+                <button type="button" class="btn btn-default" aria-label="J" (click)="letter='j'">
                     J
                 </button>
-                <button type="button" class="btn btn-default" aria-label="K" (click)="RetrieveData('k')">
+                <button type="button" class="btn btn-default" aria-label="K" (click)="letter='k'">
                     K
                 </button>
-                <button type="button" class="btn btn-default" aria-label="L" (click)="RetrieveData('l')">
+                <button type="button" class="btn btn-default" aria-label="L" (click)="letter='l'">
                     L
                 </button>
-                <button type="button" class="btn btn-default" aria-label="M" (click)="RetrieveData('m')">
+                <button type="button" class="btn btn-default" aria-label="M" (click)="letter='m'">
                     M
                 </button>
-                <button type="button" class="btn btn-default" aria-label="N" (click)="RetrieveData('n')">
+                <button type="button" class="btn btn-default" aria-label="N" (click)="letter='n'">
                     N
                 </button>
-                <button type="button" class="btn btn-default" aria-label="O" (click)="RetrieveData('o')">
+                <button type="button" class="btn btn-default" aria-label="O" (click)="letter='o'">
                     O
                 </button>
-                <button type="button" class="btn btn-default" aria-label="P" (click)="RetrieveData('p')">
+                <button type="button" class="btn btn-default" aria-label="P" (click)="letter='p'">
                     P
                 </button>
-                <button type="button" class="btn btn-default" aria-label="Q" (click)="RetrieveData('q')">
+                <button type="button" class="btn btn-default" aria-label="Q" (click)="letter='q'">
                     Q
                 </button>
-                <button type="button" class="btn btn-default" aria-label="R" (click)="RetrieveData('r')">
+                <button type="button" class="btn btn-default" aria-label="R" (click)="letter='r'">
                     R
                 </button>
-                <button type="button" class="btn btn-default" aria-label="S" (click)="RetrieveData('s')">
+                <button type="button" class="btn btn-default" aria-label="S" (click)="letter='s'">
                     S
                 </button>
-                <button type="button" class="btn btn-default" aria-label="T" (click)="RetrieveData('t')">
+                <button type="button" class="btn btn-default" aria-label="T" (click)="letter='t'">
                     T
                 </button>
-                <button type="button" class="btn btn-default" aria-label="U" (click)="RetrieveData('u')">
+                <button type="button" class="btn btn-default" aria-label="U" (click)="letter='u'">
                     U
                 </button>
-                <button type="button" class="btn btn-default" aria-label="V" (click)="RetrieveData('v')">
+                <button type="button" class="btn btn-default" aria-label="V" (click)="letter='v'">
                     V
                 </button>
-                <button type="button" class="btn btn-default" aria-label="W" (click)="RetrieveData('w')">
+                <button type="button" class="btn btn-default" aria-label="W" (click)="letter='w'">
                     W
                 </button>
-                <button type="button" class="btn btn-default" aria-label="X" (click)="RetrieveData('x')">
+                <button type="button" class="btn btn-default" aria-label="X" (click)="letter='x'">
                     X
                 </button>
-                <button type="button" class="btn btn-default" aria-label="Y" (click)="RetrieveData('y')">
+                <button type="button" class="btn btn-default" aria-label="Y" (click)="letter='y'">
                     Y
                 </button>
-                <button type="button" class="btn btn-default" aria-label="Z" (click)="RetrieveData('z')">
+                <button type="button" class="btn btn-default" aria-label="Z" (click)="letter='z'">
                     Z
                 </button>
 
-                <!-- search functionality-->
-                <button class="btn btn-default">
-                    <span class='glyphicon glyphicon-triangle-right'></span>
-                </button>
-                
             </div>
 
+            <!-- search functionality-->
             <input type="text" class="form-control" [(ngModel)]="letter" placeholder="Search...">
 
         </div>
@@ -107,7 +103,7 @@
                     <th>Frequency</th>
                 </tr>
             </thead>
-            <tr *ngFor="let item of filteredResult | filter:letter">
+            <tr *ngFor="let item of filteredResult | filter:letter ">
                 <td>{{item.word}}</td>
                 <td>{{item.count}}</td>
             </tr>

@@ -9,6 +9,7 @@ export class FilterPipe implements PipeTransform {
     filtered: WordCount[];
 
     transform(items: WordCount[], letter: string): WordCount[] {
+
         if (!items) return [];
         if (!letter) return items;
 
@@ -26,7 +27,7 @@ export class FilterPipe implements PipeTransform {
             }
         }
 
-        return this.filtered;      
+        return this.filtered.sort();      
 
     }
 }
